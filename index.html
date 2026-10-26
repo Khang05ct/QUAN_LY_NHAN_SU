@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HRM Pro | Quản lý nhân sự</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .attendance-settings-panel{max-width:720px}.attendance-settings-form{max-width:460px;margin-top:22px}.attendance-settings-form label small{font-size:11px;font-weight:400;color:var(--muted);line-height:1.5}.settings-preview{margin:0;padding:13px 15px;border-radius:8px;background:#f4f3ff;color:#5146d4;font-weight:700}
+      @media(max-width:700px){.attendance-settings-form{max-width:none}}
+    </style>
+  </head>
+  <body>
+    <main id="auth-view" class="auth-shell">
+      <section class="brand-panel">
+        <div class="brand"><span class="brand-mark">H</span><span>HRM Pro</span></div>
+        <div class="brand-copy">
+          <p class="eyebrow">Nền tảng nhân sự hiện đại</p>
+          <h1>Mọi trải nghiệm nhân sự,<br /><em>trong một nơi.</em></h1>
+          <p>Quản lý đội ngũ, theo dõi ngày công và kết nối nhân viên dễ dàng hơn mỗi ngày.</p>
+        </div>
+        <div class="stat-card"><strong>98%</strong><span>Nhân viên hài lòng</span><div class="avatars">LH &nbsp; TN &nbsp; MP &nbsp; +32</div></div>
+      </section>
+      <section class="auth-panel">
+        <div class="auth-card">
+          <div class="mobile-brand"><span class="brand-mark">H</span> HRM Pro</div>
+          <div id="login-form">
+            <p class="eyebrow">CHÀO MỪNG TRỞ LẠI</p><h2>Đăng nhập</h2><p class="subcopy">Đăng nhập để tiếp tục quản lý công việc của bạn.</p>
+            <form id="sign-in"><label>Email<input id="login-email" type="email" placeholder="ten@congty.vn" required /></label><label>Mật khẩu<div class="password-wrap"><input id="login-password" type="password" placeholder="Nhập mật khẩu" required /><button type="button" class="eye" data-toggle="login-password">⌁</button></div></label><div class="form-row"><label class="check"><input type="checkbox" /> Ghi nhớ tôi</label><button type="button" class="text-btn" data-open="forgot-form">Quên mật khẩu?</button></div><button class="primary-btn" type="submit">Đăng nhập <span>→</span></button></form>
+            <p class="switch-text">Chưa có tài khoản? <button class="text-btn" data-open="register-form">Tạo tài khoản</button></p>
+            <p class="demo-note">Tài khoản demo: <b>admin@hrm.vn</b> · mật khẩu: <b>123456</b></p>
+          </div>
+          <div id="register-form" class="hidden">
+            <button class="back-btn" data-open="login-form">← Quay lại đăng nhập</button><p class="eyebrow">BẮT ĐẦU NGAY</p><h2>Tạo tài khoản</h2><p class="subcopy">Tạo tài khoản quản trị cho doanh nghiệp của bạn.</p>
+            <form id="sign-up"><label>Họ và tên<input id="reg-name" placeholder="Nguyễn Văn A" required /></label><label>Email công việc<input id="reg-email" type="email" placeholder="ten@congty.vn" required /></label><label>Mật khẩu<div class="password-wrap"><input id="reg-password" type="password" minlength="6" placeholder="Tối thiểu 6 ký tự" required /><button type="button" class="eye" data-toggle="reg-password">⌁</button></div></label><button class="primary-btn" type="submit">Tạo tài khoản <span>→</span></button></form>
+          </div>
+          <div id="forgot-form" class="hidden">
+            <button class="back-btn" data-open="login-form">← Quay lại đăng nhập</button><p class="eyebrow">KHÔI PHỤC TÀI KHOẢN</p><h2>Quên mật khẩu?</h2><p class="subcopy">Nhập email, chúng tôi sẽ gửi hướng dẫn đặt lại mật khẩu cho bạn.</p>
+            <form id="forgot-password"><label>Email công việc<input id="forgot-email" type="email" placeholder="ten@congty.vn" required /></label><button class="primary-btn" type="submit">Gửi hướng dẫn <span>→</span></button></form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <main id="app-view" class="app hidden">
+      <aside class="sidebar"><div class="brand"><span class="brand-mark">H</span><span>HRM Pro</span></div><nav><button class="nav-item active" data-page="dashboard">◫ <span>Tổng quan</span></button><button class="nav-item" data-page="employees">♙ <span>Nhân viên</span></button><button class="nav-item" data-page="attendance">◷ <span>Chấm công</span></button><button class="nav-item" data-page="settings">⚙ <span>Cài đặt</span></button></nav><div class="sidebar-bottom"><div class="help-box"><b>✦ Cần hỗ trợ?</b><span>Liên hệ đội ngũ HRM Pro</span></div><button id="logout" class="nav-item">⇥ <span>Đăng xuất</span></button></div></aside>
+      <section class="workspace"><header><button id="menu-button" class="icon-button">☰</button><div><p id="today-label" class="today"></p><h2 id="page-title"></h2></div><div class="header-actions"><button class="icon-button">⌕</button><button class="icon-button notification">♧</button><div class="user-chip"><span id="user-initials">AD</span><div><b id="user-name">Admin HRM</b><small>Quản trị viên</small></div></div></div></header>
+        <div id="dashboard" class="page active-page"><section class="hero"><div><p class="eyebrow">THỨ HAI, 26 THÁNG 10</p><h1>Chào buổi sáng, <span id="welcome-name">Admin</span>! <span class="wave">👋</span></h1><p>Chúc bạn một ngày làm việc đầy năng lượng.</p></div><button class="clock-btn" id="quick-clock">◷ Chấm công hôm nay</button></section><section class="metrics"><article><span class="metric-icon purple">♙</span><p>Tổng nhân viên</p><h3 id="employee-total">0</h3><small class="positive">↑ 12% <i>so với tháng trước</i></small></article><article><span class="metric-icon green">✓</span><p>Có mặt hôm nay</p><h3 id="present-total">0</h3><small class="positive">↑ 4% <i>so với hôm qua</i></small></article><article><span class="metric-icon orange">◷</span><p>Đi muộn</p><h3 id="late-total">0</h3><small class="negative">↓ 2% <i>so với hôm qua</i></small></article><article><span class="metric-icon blue">▣</span><p>Đơn chờ duyệt</p><h3>3</h3><small class="neutral">Cần xử lý hôm nay</small></article></section><section class="content-grid"><article class="panel"><div class="panel-head"><div><h3>Nhân viên mới</h3><p>Thành viên vừa gia nhập đội ngũ</p></div><button class="text-btn go-page" data-page="employees">Xem tất cả →</button></div><div id="recent-employees" class="person-list"></div></article><article class="panel"><div class="panel-head"><div><h3>Trạng thái chấm công</h3><p>Hôm nay, 26 tháng 10</p></div><button class="dots">•••</button></div><div class="donut-wrap"><div class="donut"><div><b id="attendance-percent">0%</b><span>Đã có mặt</span></div></div><div class="legend"><p><i class="dot green-dot"></i>Có mặt <b id="legend-present">0</b></p><p><i class="dot orange-dot"></i>Đi muộn <b id="legend-late">0</b></p><p><i class="dot gray-dot"></i>Vắng mặt <b id="legend-absent">0</b></p></div></div></article></section></div>
+        <div id="employees" class="page"><div class="page-top"><div><h1>Nhân viên</h1><p>Quản lý thông tin đội ngũ của bạn</p></div><button id="open-add-employee" class="primary-btn">+ Thêm nhân viên</button></div><div class="toolbar"><label class="search">⌕ <input id="employee-search" placeholder="Tìm kiếm theo tên hoặc email..." /></label><select id="department-filter"><option value="">Tất cả phòng ban</option><option>Kinh doanh</option><option>Công nghệ</option><option>Nhân sự</option><option>Thiết kế</option></select></div><article class="table-panel"><table><thead><tr><th>NHÂN VIÊN</th><th>PHÒNG BAN</th><th>CHỨC VỤ</th><th>TRẠNG THÁI</th><th></th></tr></thead><tbody id="employee-table"></tbody></table><p id="empty-employees" class="empty hidden">Chưa có nhân viên phù hợp.</p></article></div>
+        <div id="attendance" class="page"><div class="page-top"><div><h1>Chấm công</h1><p>Theo dõi thời gian làm việc của nhân viên</p></div><button id="clock-in" class="primary-btn">◷ Chấm công vào</button></div><section class="attendance-banner"><div><p>TRẠNG THÁI HÔM NAY</p><h2 id="clock-status">Bạn chưa chấm công</h2><span id="clock-detail">Hãy bắt đầu ngày làm việc của bạn.</span></div><div class="current-time" id="current-time"></div></section><article class="table-panel"><div class="panel-head"><div><h3>Bảng chấm công hôm nay</h3><p>26 tháng 10, 2026</p></div><button class="text-btn">Xuất báo cáo ↓</button></div><table><thead><tr><th>NHÂN VIÊN</th><th>GIỜ VÀO</th><th>GIỜ RA</th><th>TỔNG GIỜ</th><th>TRẠNG THÁI</th></tr></thead><tbody id="attendance-table"></tbody></table></article></div>
+        <div id="settings" class="page"><div class="page-top"><div><h1>Cài đặt chấm công</h1><p>Thiết lập giờ bắt đầu ca và quy tắc tính đi trễ</p></div></div><article class="panel attendance-settings-panel"><div class="panel-head"><div><h3>Quy định giờ vào</h3><p>Áp dụng cho trạng thái chấm công của nhân viên</p></div></div><form id="attendance-settings-form" class="attendance-settings-form"><label>Giờ bắt đầu ca<input id="shift-start-time" type="time" required /></label><label>Thời gian ân hạn (phút)<input id="late-grace-minutes" type="number" min="0" max="120" step="1" required /><small>Số phút sau giờ bắt đầu ca vẫn được tính là có mặt.</small></label><p id="late-time-preview" class="settings-preview"></p><button class="primary-btn" type="submit">Lưu cài đặt</button></form></article></div>
+      </section>
+    </main>
+    <div id="employee-modal" class="modal hidden"><div class="modal-card"><button class="close-modal">×</button><p class="eyebrow">THÊM THÀNH VIÊN</p><h2>Nhân viên mới</h2><form id="add-employee-form" class="modal-form"><label>Họ và tên<input id="emp-name" required placeholder="Nguyễn Văn A" /></label><label>Email<input id="emp-email" required type="email" placeholder="email@congty.vn" /></label><div class="form-grid"><label>Phòng ban<select id="emp-department" required><option value="">Chọn phòng ban</option><option>Kinh doanh</option><option>Công nghệ</option><option>Nhân sự</option><option>Thiết kế</option></select></label><label>Chức vụ<input id="emp-role" required placeholder="VD: Nhân viên" /></label></div><button class="primary-btn" type="submit">Thêm nhân viên <span>→</span></button></form></div></div>
+    <div id="toast" class="toast"></div><script src="app.js"></script>
+  </body>
+</html>
