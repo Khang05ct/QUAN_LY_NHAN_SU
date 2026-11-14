@@ -1,0 +1,17 @@
+{
+  "name": "hrm-pro",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node Backend/server.js",
+    "test": "node --test Backend/test/face-utils.test.js"
+  },
+  "dependencies": {
+    "@vladmandic/face-api": "^1.7.15",
+    "dotenv": "^16.4.7",
+    "mysql2": "^3.14.0"
+  }
+}
